@@ -9,14 +9,56 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, LoginDelegate {
 
     var window: UIWindow?
 
+    // The current user
+    var currentUser : PFUser?
+    var iSLoggedIn : Boolean?
+    
+    var loginController : RADLoginViewController?
+    var navigationController: UINavigationController?
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        Parse.setApplicationId("aCnkUAmAJHoxsLebFIyfkotl2nhIZv2nK0a9JoQ8", clientKey: "RBORg25gzX0N68csxfQdgoPTBomjnwm3CKtdkzsD");
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions);
+        
+        loginController = RADLoginViewController()
+        loginController?.delegate = self
+    
+        // See if user is logged in or not
+        self.currentUser = PFUser.currentUser()
+        (currentUser != nil) ? showApp() : showLogin()
+        
         return true
+    }
+    
+    // Pushes the login view controller as root of nav controller
+    func showLogin() {
+        
+        self.navigationController = UINavigationController(rootViewController: loginController!)
+        if let navBar = self.navigationController?.navigationBar {
+            navBar.barTintColor = backgroundColor
+            navBar.translucent = false
+            navBar.tintColor = UIColor.whiteColor()
+            navBar.titleTextAttributes = NSDictionary(dictionary: [UIColor.whiteColor():NSForegroundColorAttributeName])
+        }
+        self.window!.rootViewController = self.navigationController
+    }
+    
+    // Pushes the home view controller as root of nav controller
+    func showApp() {
+        let plantsView = RADAllPlantsTableViewController()
+        self.navigationController = UINavigationController(rootViewController: plantsView)
+        if let navBar = self.navigationController?.navigationBar {
+            navBar.barTintColor = backgroundColor
+            navBar.translucent = false
+            navBar.tintColor = UIColor.whiteColor()
+            navBar.titleTextAttributes = NSDictionary(dictionary: [UIColor.whiteColor():NSForegroundColorAttributeName])
+        }
+        self.window!.rootViewController = self.navigationController
     }
 
     func applicationWillResignActive(application: UIApplication) {
