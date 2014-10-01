@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8141E8819DC6DAB0027B109 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = B8141E8719DC6DAB0027B109 /* camera.png */; };
 		B81ED6A919CB4D3300E13D6E /* RADAllPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED6A819CB4D3300E13D6E /* RADAllPlantsTableViewController.swift */; };
 		B81ED6AB19CB4EC800E13D6E /* RADPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED6AA19CB4EC800E13D6E /* RADPlant.swift */; };
 		B81ED6AF19CB58F300E13D6E /* RADPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED6AE19CB58F300E13D6E /* RADPlantViewController.swift */; };
 		B81ED6B219CB808500E13D6E /* RADPlantImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81ED6B119CB808500E13D6E /* RADPlantImage.swift */; };
-		B83B75EF19CB9048005506E0 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = B83B75EE19CB9048005506E0 /* camera.png */; };
 		B8BC0B8A19C803C1009D2D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BC0B8919C803C1009D2D9D /* AppDelegate.swift */; };
 		B8BC0B8F19C803C1009D2D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8BC0B8D19C803C1009D2D9D /* Main.storyboard */; };
 		B8BC0B9119C803C1009D2D9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8BC0B9019C803C1009D2D9D /* Images.xcassets */; };
@@ -45,11 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8141E8719DC6DAB0027B109 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		B81ED6A819CB4D3300E13D6E /* RADAllPlantsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RADAllPlantsTableViewController.swift; sourceTree = "<group>"; };
 		B81ED6AA19CB4EC800E13D6E /* RADPlant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RADPlant.swift; sourceTree = "<group>"; };
 		B81ED6AE19CB58F300E13D6E /* RADPlantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RADPlantViewController.swift; sourceTree = "<group>"; };
 		B81ED6B119CB808500E13D6E /* RADPlantImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RADPlantImage.swift; sourceTree = "<group>"; };
-		B83B75EE19CB9048005506E0 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = ../../Radicles_old/Radicles/camera.png; sourceTree = "<group>"; };
 		B8BC0B8419C803C1009D2D9D /* Radicles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radicles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BC0B8819C803C1009D2D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8BC0B8919C803C1009D2D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 		B8BC0BC519C94B10009D2D9D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B83B75EE19CB9048005506E0 /* camera.png */,
+				B8141E8719DC6DAB0027B109 /* camera.png */,
 				B8BC0B8D19C803C1009D2D9D /* Main.storyboard */,
 				B8BC0B9019C803C1009D2D9D /* Images.xcassets */,
 				B8BC0B9219C803C1009D2D9D /* LaunchScreen.xib */,
@@ -306,7 +306,7 @@
 			files = (
 				B8BC0B8F19C803C1009D2D9D /* Main.storyboard in Resources */,
 				B8BC0B9419C803C1009D2D9D /* LaunchScreen.xib in Resources */,
-				B83B75EF19CB9048005506E0 /* camera.png in Resources */,
+				B8141E8819DC6DAB0027B109 /* camera.png in Resources */,
 				B8BC0B9119C803C1009D2D9D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
