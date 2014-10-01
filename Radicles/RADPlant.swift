@@ -10,11 +10,25 @@ import Foundation
 
 class RADPlant : NSObject {
     
-    var name : String
-    var images : NSMutableArray = []
+    var PFObjectRef = PFObject(className: "RADPlant")
     
     init(name: String) {
-        self.name = name
+        PFObjectRef["name"] = name
+        PFObjectRef["user"] = PFUser.currentUser()
+        PFObjectRef.saveInBackground()
+        NSLog("finished saving")
     }
     
+    init (ref: PFObject) {
+        PFObjectRef = ref
+    }
+    
+    override init () {
+        
+    }
+    
+    func changeName(name:String) {
+        PFObjectRef["name"] = name
+        PFObjectRef.saveInBackground()
+    }
 }
