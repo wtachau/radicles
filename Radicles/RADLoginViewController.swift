@@ -48,15 +48,10 @@ class RADLoginViewController : UITableViewController, UITableViewDelegate, UITab
                 let errorString = error.userInfo!["error"] as NSString
                 self.doneString = "done"
                 self.tableView.reloadData()
-                
-                // Present alert
-                //                let alert = UIAlertView(title: "Error", message: errorString.capitalizedString, delegate: nil, cancelButtonTitle: "Ok")
-                //                alert.show()
-                
-                // THIS WILL NEED TO BE IN IOS 8
-                //                var alert = UIAlertController(title: "Error", message: errorString.capitalizedString, preferredStyle: UIAlertControllerStyle.Alert)
-                //                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                //                self.presentViewController(alert, animated: true, completion: nil)
+              
+                var alert = UIAlertController(title: "Error", message: errorString.capitalizedString, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }
@@ -78,15 +73,10 @@ class RADLoginViewController : UITableViewController, UITableViewDelegate, UITab
                 let errorString = error.userInfo!["error"] as NSString
                 self.doneString = "done"
                 self.tableView.reloadData()
-                
-                // Present alert
-                //                let alert = UIAlertView(title: "Error", message: errorString.capitalizedString, delegate: nil, cancelButtonTitle: "Ok")
-                //                alert.show()
-                
-                //                FOR IOS 8
-                //                var alert = UIAlertController(title: "Error", message: errorString.capitalizedString, preferredStyle: UIAlertControllerStyle.Alert)
-                //                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                //                self.presentViewController(alert, animated: true, completion: nil)
+              
+                var alert = UIAlertController(title: "Error", message: errorString.capitalizedString, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }
