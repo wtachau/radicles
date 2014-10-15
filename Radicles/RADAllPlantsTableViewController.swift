@@ -8,14 +8,24 @@
 
 import Foundation
 
+protocol LogoutDelegate {
+  func showLogin()
+}
+
 class RADAllPlantsTableViewController : UITableViewController {
     
     var plants:NSMutableArray = []
-    
+  
+    var logoutDelegate:LogoutDelegate?
+  
     override func viewDidLoad() {
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addPlant")
         self.navigationItem.rightBarButtonItem = rightBarButton
-        
+      
+        let leftBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "logout")
+        self.navigationItem.leftBarButtonItem = leftBarButton
+      
+        //leftBarButton.
         let plantsQuery = PFQuery(className: "RADPlant")
         plantsQuery.whereKey("user", equalTo: PFUser.currentUser())
         plantsQuery.findObjectsInBackgroundWithBlock {
@@ -29,6 +39,11 @@ class RADAllPlantsTableViewController : UITableViewController {
         }
         
     }
+  
+  func logout () {
+    PFUser.logOut()
+    logoutDelegate!.showLogin()
+  }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let plant = self.plants.objectAtIndex(indexPath.row) as RADPlant
