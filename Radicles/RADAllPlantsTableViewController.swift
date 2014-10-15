@@ -22,10 +22,9 @@ class RADAllPlantsTableViewController : UITableViewController {
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addPlant")
         self.navigationItem.rightBarButtonItem = rightBarButton
       
-        let leftBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "logout")
+        let leftBarButton = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.Plain, target: self, action: "logout")
         self.navigationItem.leftBarButtonItem = leftBarButton
       
-        //leftBarButton.
         let plantsQuery = PFQuery(className: "RADPlant")
         plantsQuery.whereKey("user", equalTo: PFUser.currentUser())
         plantsQuery.findObjectsInBackgroundWithBlock {
