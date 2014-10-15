@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, LoginDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, LoginDelegate, LogoutDelegate {
 
     var window: UIWindow?
 
@@ -37,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginDelegate {
     
     // Pushes the login view controller as root of nav controller
     func showLogin() {
-        
+      
+      self.currentUser = PFUser.currentUser()
+      
         self.navigationController = UINavigationController(rootViewController: loginController!)
         if let navBar = self.navigationController?.navigationBar {
             navBar.barTintColor = backgroundColor
@@ -51,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginDelegate {
     // Pushes the home view controller as root of nav controller
     func showApp() {
         let plantsView = RADAllPlantsTableViewController()
+        plantsView.logoutDelegate = self
         self.navigationController = UINavigationController(rootViewController: plantsView)
         if let navBar = self.navigationController?.navigationBar {
             navBar.barTintColor = backgroundColor
